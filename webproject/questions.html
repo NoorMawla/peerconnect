@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PeerConnect - Questions</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .questions-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-top: 15px;
+      }
+
+      .main-title {
+        font-size: 35px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+        color: #777;
+      }
+
+      .questions-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+
+      .question-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        padding: 24px;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .user-avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 12px;
+      }
+
+      .user-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .user-details {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .user-name {
+        font-weight: 600;
+        font-size: 16px;
+        color: #333;
+      }
+
+      .user-status {
+        font-size: 14px;
+        color: #777;
+      }
+
+      .question-text {
+        font-size: 18px;
+        color: #333;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        min-height: 80px;
+      }
+
+      .answer-button {
+        background-color: #f0f2ff;
+        color: #0072ce;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 24px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .answer-button:hover {
+        background-color: #e0e4ff;
+      }
+
+      .view-more-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .view-more-button {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: 1px solid #0072ce;
+        color: #0072ce;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .view-more-button:hover {
+        background-color: #e0e4ff;
+      }
+
+      .info-icon {
+        margin-left: 8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid #0072ce;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #0072ce;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 992px) {
+        .questions-container {
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .question-card {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-title {
+          font-size: 24px;
+        }
+
+        .subtitle {
+          font-size: 14px;
+        }
+
+        .question-card {
+          padding: 18px;
+        }
+
+        .question-text {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="questions-header">
+      <h1 class="main-title">Questions</h1>
+      <p class="subtitle">Frequently asked questions</p>
+    </div>
+
+    <div class="questions-container">
+      <!-- Question Card 1 -->
+      <div class="question-card">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="profile-1.png" alt="Elias Hart Profile" />
+          </div>
+          <div class="user-details">
+            <span class="user-name">Elias Hart</span>
+            <span class="user-status">Questioner</span>
+          </div>
+        </div>
+        <p class="question-text">
+          Apa yang dimaksud dengan IoT (Internet of Things) dan jelaskan
+          contohnya?
+        </p>
+        <button class="answer-button">Answer</button>
+      </div>
+
+      <!-- Question Card 2 -->
+      <div class="question-card">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="profile-2.png" alt="Theo Rivers Profile" />
+          </div>
+          <div class="user-details">
+            <span class="user-name">Theo Rivers</span>
+            <span class="user-status">Questioner</span>
+          </div>
+        </div>
+        <p class="question-text">
+          Apa yang dimaksud dengan IoT (Internet of Things) dan jelaskan
+          contohnya?
+        </p>
+        <button class="answer-button">Answer</button>
+      </div>
+
+      <!-- Question Card 3 -->
+      <div class="question-card">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="profile-3.png" alt="Elara Blake Profile" />
+          </div>
+          <div class="user-details">
+            <span class="user-name">Elara Blake</span>
+            <span class="user-status">Questioner</span>
+          </div>
+        </div>
+        <p class="question-text">
+          Apa yang dimaksud dengan IoT (Internet of Things) dan jelaskan
+          contohnya?
+        </p>
+        <button class="answer-button">Answer</button>
+      </div>
+
+      <!-- Question Card 4 -->
+      <div class="question-card">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="profile-4.png" alt="Sienna Rae Profile" />
+          </div>
+          <div class="user-details">
+            <span class="user-name">Sienna Rae</span>
+            <span class="user-status">Questioner</span>
+          </div>
+        </div>
+        <p class="question-text">
+          Apa yang dimaksud dengan IoT (Internet of Things) dan jelaskan
+          contohnya?
+        </p>
+        <button class="answer-button">Answer</button>
+      </div>
+
+      <!-- Question Card 5 -->
+      <div class="question-card">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="profile-5.png" alt="Adriane Fox Profile" />
+          </div>
+          <div class="user-details">
+            <span class="user-name">Adriane Fox</span>
+            <span class="user-status">Questioner</span>
+          </div>
+        </div>
+        <p class="question-text">
+          Apa yang dimaksud dengan IoT (Internet of Things) dan jelaskan
+          contohnya?
+        </p>
+        <button class="answer-button">Answer</button>
+      </div>
+
+      <!-- Question Card 6 -->
+      <div class="question-card">
+        <div class="user-info">
+          <div class="user-avatar">
+            <img src="profile-6.png" alt="Lara James Profile" />
+          </div>
+          <div class="user-details">
+            <span class="user-name">Lara James</span>
+            <span class="user-status">Questioner</span>
+          </div>
+        </div>
+        <p class="question-text">
+          Apa yang dimaksud dengan IoT (Internet of Things) dan jelaskan
+          contohnya?
+        </p>
+        <button class="answer-button">Answer</button>
+      </div>
+    </div>
+
+    <div class="view-more-container">
+      <button class="view-more-button">
+        View More
+        <span class="info-icon">i</span>
+      </button>
+    </div>
+  </body>
+</html>

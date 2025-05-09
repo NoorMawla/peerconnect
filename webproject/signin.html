@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PeerConnect - Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        display: flex;
+        min-height: 100vh;
+      }
+
+      .right-section {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+      }
+
+      .title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        max-width: 300px;
+        opacity: 0.9;
+      }
+
+      .login-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 40px;
+        width: 80%;
+        max-width: 400px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .login-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .login-subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        font-size: 14px;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #0072ce;
+      }
+
+      .password-input {
+        background-color: #f8f8f8;
+      }
+
+      .btn-login {
+        width: 100%;
+        padding: 12px;
+        background-color: #0072ce;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .btn-login:hover {
+        background-color: #005eb8;
+      }
+
+      .register-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .register-link {
+        color: #0072ce;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .register-link:hover {
+        text-decoration: underline;
+      }
+
+      .app-image {
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 250px;
+      }
+
+      .circle {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .circle-1 {
+        width: 200px;
+        height: 200px;
+        top: 50px;
+        left: 50px;
+      }
+
+      .circle-2 {
+        width: 300px;
+        height: 300px;
+        top: 0;
+        left: 0;
+      }
+
+      .circle-3 {
+        width: 400px;
+        height: 400px;
+        top: -50px;
+        left: -50px;
+      }
+
+      .circle-4 {
+        width: 500px;
+        height: 500px;
+        top: -100px;
+        left: -100px;
+      }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Add form submit event handler
+        $("form").submit(function (event) {
+          // Prevent the default form submission
+          event.preventDefault();
+
+          // Get email and password values
+          const email = $("#email").val();
+          const password = $("#password").val();
+
+          // Here you would typically validate the credentials
+          // For now, we'll just redirect to home.html
+
+          // Redirect to home.html
+          window.location.href = "home.html";
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="left-section">
+      <img src="login.png" />
+    </div>
+
+    <div class="right-section">
+      <div class="login-container">
+        <h2 class="login-title">Login</h2>
+        <p class="login-subtitle">
+          Complete the form below with your valid data
+        </p>
+
+        <form>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-input"
+              placeholder=""
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-input password-input"
+              placeholder=""
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-login">Login</button>
+        </form>
+
+        <p class="register-text">
+          Don't have an account yet?
+          <a href="signup.html" class="register-link">Register</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

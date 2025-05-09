@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PeerConnect - Find Your Perfect Study Match</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      header {
+        padding: 20px 0;
+        background-color: #f5f7fa;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo a {
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .logo span:first-child {
+        color: #333;
+      }
+
+      .logo span:last-child {
+        color: #0078d4;
+      }
+
+      .menu {
+        display: flex;
+        gap: 30px;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-bar input {
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+      }
+
+      .search-bar button {
+        background-color: #0078d4;
+        color: white;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hero-content {
+        max-width: 500px;
+      }
+
+      .hero-content h1 {
+        font-size: 42px;
+        color: #333;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-content p {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 18px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background-color: #0078d4;
+        color: white;
+        border: none;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #0078d4;
+        border: 1px solid #0078d4;
+      }
+
+      .hero-image-container {
+        position: relative;
+        width: 450px;
+        margin-top: -40px; /* Move the image higher */
+      }
+
+      .hero-image {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .bubble {
+        position: absolute;
+        background-color: white;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        z-index: 3;
+      }
+
+      .bubble-questions {
+        top: 20%;
+        right: -10%;
+        padding: 20px;
+      }
+
+      .bubble-questions p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .circle-progress {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle-progress:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top: 8px solid #00e1b4;
+        border-right: 8px solid #00e1b4;
+        transform: rotate(45deg);
+      }
+
+      .circle-progress span {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .bubble-chat {
+        bottom: 10%;
+        right: -5%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #00b3a1;
+        color: white;
+        font-size: 24px;
+        border-radius: 50%;
+      }
+
+      .bubble-ask {
+        left: 10%;
+        bottom: 30%;
+        padding: 10px 15px;
+      }
+
+      .bubble-ask p {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .star-icon {
+        position: absolute;
+        top: 15%;
+        right: -5%;
+        background-color: #0078d4;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        z-index: 3;
+      }
+
+      /* Mentorship Section */
+      .mentorship {
+        text-align: center;
+        padding: 0;
+        margin-top: -30px; /* Bring the mentorship text higher */
+        background-color: #f5f7fa;
+      }
+
+      .mentorship h2 {
+        font-size: 36px;
+        color: #666;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <a href="#"><span>Peer</span><span>Connect</span></a>
+          </div>
+          <div class="menu">
+            <a href="#">Home Page</a>
+            <a href="#">About</a>
+            <a href="#">Question</a>
+            <a href="#">Profile</a>
+          </div>
+          <div class="search-bar">
+            <input type="text" placeholder="Search" />
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Find Your Perfect Study Match at AUST</h1>
+            <p>Connect with peers, give or receive help, and earn coins.</p>
+            <div class="hero-buttons">
+              <a href="signin.html" class="btn btn-primary">Sign In</a>
+              <a href="signup.html" class="btn btn-secondary">Sign Up</a>
+            </div>
+          </div>
+          <div class="hero-image-container">
+            <div class="hero-image">
+              <img src="model.png" alt="Student thinking" />
+              <!-- Replace "path/to/your-student-image.jpg" with the actual path to your image file -->
+            </div>
+            <div class="bubble bubble-questions">
+              <p>Questioner</p>
+              <div class="circle-progress">
+                <span>117k</span>
+              </div>
+            </div>
+            <div class="bubble bubble-chat">
+              <span>💬</span>
+            </div>
+            <div class="bubble bubble-ask">
+              <p>Want to ask this</p>
+            </div>
+            <div class="star-icon">
+              <span>★</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
